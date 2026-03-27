@@ -57,17 +57,14 @@ LEVEL 1 - CATEGORY CLASSES
 |        FoodItem (extends StoreItem)            |
 +-----------------------------------------------+
 | - expirationDate: String                       |
-| - organic: boolean                             |
 +-----------------------------------------------+
 | + FoodItem(name: String, price: double,        |
 |     quantity: int, brand: String,               |
-|     description: String, expirationDate: String,|
-|     organic: boolean)                           |
+|     description: String,                        |
+|     expirationDate: String)                     |
 | + getExpirationDate(): String                  |
 | + setExpirationDate(expirationDate: String):   |
 |     void                                        |
-| + isOrganic(): boolean                         |
-| + setOrganic(organic: boolean): void           |
 | + getTaxRate(): double                         |
 | + toString(): String                           |
 +-----------------------------------------------+
@@ -76,16 +73,12 @@ LEVEL 1 - CATEGORY CLASSES
 |     ElectronicsItem (extends StoreItem)        |
 +-----------------------------------------------+
 | - warranty: String                             |
-| - powerType: String                            |
 +-----------------------------------------------+
 | + ElectronicsItem(name: String, price: double, |
 |     quantity: int, brand: String,               |
-|     description: String, warranty: String,      |
-|     powerType: String)                          |
+|     description: String, warranty: String)      |
 | + getWarranty(): String                        |
 | + setWarranty(warranty: String): void          |
-| + getPowerType(): String                       |
-| + setPowerType(powerType: String): void        |
 | + getTaxRate(): double                         |
 | + toString(): String                           |
 +-----------------------------------------------+
@@ -113,33 +106,27 @@ LEVEL 2 - FOOD ITEMS
 |          Fruit (extends FoodItem)              |
 +-----------------------------------------------+
 | - season: String                               |
-| - preCut: boolean                              |
 +-----------------------------------------------+
 | + Fruit(name: String, price: double,           |
 |     quantity: int, brand: String,               |
-|     description: String, expirationDate: String,|
-|     organic: boolean, season: String,           |
-|     preCut: boolean)                            |
+|     description: String,                        |
+|     expirationDate: String,                     |
+|     season: String)                             |
 | + getSeason(): String                          |
 | + setSeason(season: String): void              |
-| + isPreCut(): boolean                          |
-| + setPreCut(preCut: boolean): void             |
 | + toString(): String                           |
 +-----------------------------------------------+
 
 +-----------------------------------------------+
 |        Vegetable (extends FoodItem)            |
 +-----------------------------------------------+
-| - leafy: boolean                               |
 | - weight: double                               |
 +-----------------------------------------------+
 | + Vegetable(name: String, price: double,       |
 |     quantity: int, brand: String,               |
-|     description: String, expirationDate: String,|
-|     organic: boolean, leafy: boolean,           |
+|     description: String,                        |
+|     expirationDate: String,                     |
 |     weight: double)                             |
-| + isLeafy(): boolean                           |
-| + setLeafy(leafy: boolean): void               |
 | + getWeight(): double                          |
 | + setWeight(weight: double): void              |
 | + toString(): String                           |
@@ -153,9 +140,9 @@ LEVEL 2 - FOOD ITEMS
 +-----------------------------------------------+
 | + ShelfStable(name: String, price: double,     |
 |     quantity: int, brand: String,               |
-|     description: String, expirationDate: String,|
-|     organic: boolean, shelfLifeMonths: int,     |
-|     type: String)                               |
+|     description: String,                        |
+|     expirationDate: String,                     |
+|     shelfLifeMonths: int, type: String)         |
 | + getShelfLifeMonths(): int                    |
 | + setShelfLifeMonths(shelfLifeMonths: int):    |
 |     void                                        |
@@ -173,20 +160,13 @@ LEVEL 2 - ELECTRONICS ITEMS
 |       TV (extends ElectronicsItem)             |
 +-----------------------------------------------+
 | - screenSize: int                              |
-| - resolution: String                           |
-| - smartTV: boolean                             |
 +-----------------------------------------------+
 | + TV(name: String, price: double,              |
 |     quantity: int, brand: String,               |
 |     description: String, warranty: String,      |
-|     powerType: String, screenSize: int,         |
-|     resolution: String, smartTV: boolean)       |
+|     screenSize: int)                            |
 | + getScreenSize(): int                         |
 | + setScreenSize(screenSize: int): void         |
-| + getResolution(): String                      |
-| + setResolution(resolution: String): void      |
-| + isSmartTV(): boolean                         |
-| + setSmartTV(smartTV: boolean): void           |
 | + toString(): String                           |
 +-----------------------------------------------+
 
@@ -195,19 +175,15 @@ LEVEL 2 - ELECTRONICS ITEMS
 +-----------------------------------------------+
 | - processor: String                            |
 | - ram: int                                     |
-| - storageGB: int                               |
 +-----------------------------------------------+
 | + Laptop(name: String, price: double,          |
 |     quantity: int, brand: String,               |
 |     description: String, warranty: String,      |
-|     powerType: String, processor: String,       |
-|     ram: int, storageGB: int)                   |
+|     processor: String, ram: int)                |
 | + getProcessor(): String                       |
 | + setProcessor(processor: String): void        |
 | + getRam(): int                                |
 | + setRam(ram: int): void                       |
-| + getStorageGB(): int                          |
-| + setStorageGB(storageGB: int): void           |
 | + toString(): String                           |
 +-----------------------------------------------+
 
@@ -216,19 +192,15 @@ LEVEL 2 - ELECTRONICS ITEMS
 +-----------------------------------------------+
 | - carrier: String                              |
 | - screenSize: double                           |
-| - storageGB: int                               |
 +-----------------------------------------------+
 | + Phone(name: String, price: double,           |
 |     quantity: int, brand: String,               |
 |     description: String, warranty: String,      |
-|     powerType: String, carrier: String,         |
-|     screenSize: double, storageGB: int)         |
+|     carrier: String, screenSize: double)        |
 | + getCarrier(): String                         |
 | + setCarrier(carrier: String): void            |
 | + getScreenSize(): double                      |
 | + setScreenSize(screenSize: double): void      |
-| + getStorageGB(): int                          |
-| + setStorageGB(storageGB: int): void           |
 | + toString(): String                           |
 +-----------------------------------------------+
 
@@ -240,19 +212,12 @@ LEVEL 2 - HOUSEHOLD ITEMS
 +-----------------------------------------------+
 |    CleaningSupply (extends HouseholdItem)       |
 +-----------------------------------------------+
-| - scent: String                                |
-| - hazardous: boolean                           |
 | - surfaceType: String                          |
 +-----------------------------------------------+
 | + CleaningSupply(name: String, price: double,  |
 |     quantity: int, brand: String,               |
 |     description: String, roomType: String,      |
-|     scent: String, hazardous: boolean,          |
 |     surfaceType: String)                        |
-| + getScent(): String                           |
-| + setScent(scent: String): void                |
-| + isHazardous(): boolean                       |
-| + setHazardous(hazardous: boolean): void       |
 | + getSurfaceType(): String                     |
 | + setSurfaceType(surfaceType: String): void    |
 | + toString(): String                           |
@@ -263,20 +228,15 @@ LEVEL 2 - HOUSEHOLD ITEMS
 +-----------------------------------------------+
 | - material: String                             |
 | - weight: double                               |
-| - assemblyRequired: boolean                    |
 +-----------------------------------------------+
 | + Furniture(name: String, price: double,       |
 |     quantity: int, brand: String,               |
 |     description: String, roomType: String,      |
-|     material: String, weight: double,           |
-|     assemblyRequired: boolean)                  |
+|     material: String, weight: double)           |
 | + getMaterial(): String                        |
 | + setMaterial(material: String): void          |
 | + getWeight(): double                          |
 | + setWeight(weight: double): void              |
-| + isAssemblyRequired(): boolean                |
-| + setAssemblyRequired(assemblyRequired:        |
-|     boolean): void                              |
 | + toString(): String                           |
 +-----------------------------------------------+
 
